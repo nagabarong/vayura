@@ -21,7 +21,6 @@ FROM alpine:latest
 
 WORKDIR /root/
 COPY --from=builder /app/server .
-COPY .env .  # optional, bisa pakai Railway env juga
 COPY Uploads ./Uploads
 
 # Expose port default
