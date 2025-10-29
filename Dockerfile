@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Gunakan base image golang
-FROM golang:1.22-alpine AS builder
+FROM golang:1.24-alpine AS builder
 
 # Set working directory
 WORKDIR /app
