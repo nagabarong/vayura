@@ -16,17 +16,16 @@ A simple, production-ready REST API backend built with Go, Gin, and GORM. It pro
 
 ### Project Structure
 ```text
-backend/
-  cmd/server/main.go           # App entrypoint
-  config/                      # Config and DB setup
-  internal/
-    handler/                   # HTTP handlers (auth, user)
-    models/                    # GORM models
-    repository/                # Data access layer
-    service/                   # Business logic (auth, user, storage)
-  pkg/                         # Shared utilities (jwt, middleware, responses, errors)
-  routes/routes.go             # Route definitions
-  Uploads/avatars/             # Uploaded avatar files
+cmd/server/main.go           # App entrypoint
+config/                      # Config and DB setup
+internal/
+  handler/                   # HTTP handlers (auth, user)
+  models/                    # GORM models
+  repository/                # Data access layer
+  service/                   # Business logic (auth, user, storage)
+pkg/                         # Shared utilities (jwt, middleware, responses, errors)
+routes/routes.go             # Route definitions
+Uploads/avatars/             # Uploaded avatar files
 ```
 
 ---
@@ -36,7 +35,7 @@ backend/
 - PostgreSQL 13+
 
 ### Environment Variables
-Create a `.env` file in the `backend/` directory with the following keys:
+Create a `.env` file in the project root with the following keys:
 
 ```env
 # Database Configuration
@@ -64,7 +63,7 @@ Notes:
 ---
 
 ### Installation & Run
-From the `backend/` directory:
+From the project root:
 
 ```bash
 # 1) Run the server (Go)
@@ -212,7 +211,7 @@ Notes:
 
 ### Development Tips
 - Switch GORM logger level in `config/config.go` if you need SQL logs.
-- Ensure `.env` is in `backend/` as `godotenv.Load()` looks there.
+- Ensure `.env` is in the project root as `godotenv.Load()` looks there.
 - JWT expiration is 72 hours; keep `JWT_SECRET` strong in production.
 
 ### License
