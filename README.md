@@ -32,11 +32,11 @@ backend/
 ---
 
 ### Prerequisites
-- Go 1.21+
+- Go 1.24+
 - PostgreSQL 13+
 
 ### Environment Variables
-Create a `.env` file in `backend/` directory based on `backend/env.example`:
+Create a `.env` file in the `backend/` directory with the following keys:
 
 ```env
 # Database Configuration
@@ -51,6 +51,7 @@ APP_PORT=8080
 
 # JWT Configuration
 JWT_SECRET=your-super-secret-jwt-key-change-in-production
+JWT_EXPIRES_IN=72h
 
 # Storage
 UPLOAD_DIR=Uploads/avatars
@@ -66,10 +67,7 @@ Notes:
 From the `backend/` directory:
 
 ```bash
-# 1) Copy environment file
-cp env.example .env
-
-# 2) Run the server (Go)
+# 1) Run the server (Go)
 go run ./cmd/server
 
 # Or build binary
