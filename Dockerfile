@@ -22,7 +22,7 @@ FROM alpine:latest
 WORKDIR /root/
 COPY --from=builder /app/server .
 COPY .env .  # optional, bisa pakai Railway env juga
-COPY uploads ./uploads
+COPY Uploads ./Uploads
 
 # Expose port default
 EXPOSE 8080
